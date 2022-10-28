@@ -20,7 +20,7 @@ assign dtz = z >>> 8;
   // s3_out - s4_out = (x*y-beta*z)*dt
 signed_mult s1 (.a(dty-dtx), .b(sigma), .out(s1_out));
 signed_mult s2 (.a(dtx), .b(rho - z), .out(s2_out));
-signed_mult xy (.a(x), .b(dty), .out(s3_out));
+signed_mult xy (.a(dtx), .b(y), .out(s3_out));
 signed_mult bz (.a(dtz), .b(beta), .out(s4_out));
 
 //instantiate integrator module
